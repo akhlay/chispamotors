@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src https://api.github.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<style>html{visibility:hidden}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Chispa Motos · Administración</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f3f5f8;--surface:#fff;--surface-2:#e9edf3;--line:#d5dbe5;--line-soft:#e6eaf0;--ink:#0f1522;--ink-2:#3d4757;--ink-3:#6b7585;--brand:#0b2545;--brand-2:#13385f;--accent:#f5a100;--accent-ink:#1a1200;--accent-soft:#fff3d6;--ok:#0f8a4a;--ok-soft:#dff5e8;--warn:#b45309;--warn-soft:#fdf0d9;--danger:#c0262d;--danger-soft:#fde3e4;--shadow:0 10px 30px rgba(15,21,34,.10);--shadow-sm:0 2px 8px rgba(15,21,34,.08);--r:14px;--r-sm:8px;--font-display:"Barlow Condensed","Arial Narrow",sans-serif;--font-body:"Barlow","Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e131c;--surface:#161c27;--surface-2:#1f2733;--line:#2c3644;--line-soft:#232c39;--ink:#eef2f7;--ink-2:#c3ccd9;--ink-3:#8e9ab0;--brand:#1a3d68;--brand-2:#254d7e;--accent:#ffb424;--accent-soft:#3a2b05;--ok:#3fcf80;--ok-soft:#10301f;--warn:#f2b14b;--warn-soft:#332307;--danger:#ff6b70;--danger-soft:#3a1214;--shadow:0 10px 30px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e131c;--surface:#161c27;--surface-2:#1f2733;--line:#2c3644;--line-soft:#232c39;--ink:#eef2f7;--ink-2:#c3ccd9;--ink-3:#8e9ab0;--brand:#1a3d68;--brand-2:#254d7e;--accent:#ffb424;--accent-soft:#3a2b05;--ok:#3fcf80;--ok-soft:#10301f;--warn:#f2b14b;--warn-soft:#332307;--danger:#ff6b70;--danger-soft:#3a1214;--shadow:0 10px 30px rgba(0,0,0,.45);--shadow-sm:0 2px 8px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.45}
+h1,h2,h3{font-family:var(--font-display);margin:0;line-height:1.05;letter-spacing:.005em}
+button{font:inherit;color:inherit;cursor:pointer}input,select,textarea{font:inherit;color:inherit}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;border-radius:999px;padding:9px 16px;font-weight:600;font-size:.92rem;background:var(--surface-2);white-space:nowrap}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}.btn-brand{background:var(--brand);color:#fff}.btn-ghost{background:transparent;border-color:var(--line)}.btn-danger{background:var(--danger-soft);color:var(--danger)}.btn-sm{padding:6px 12px;font-size:.85rem}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.pill{display:inline-block;border-radius:999px;padding:2px 9px;font-size:.75rem;font-weight:600;background:var(--surface-2);color:var(--ink-2)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}.pill.warn{background:var(--warn-soft);color:var(--warn)}.pill.danger{background:var(--danger-soft);color:var(--danger)}.pill.accent{background:var(--accent-soft);color:var(--warn)}
+/* login */
+.login{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(800px 400px at 70% 20%,rgba(245,161,0,.18),transparent 60%),var(--bg)}
+.login-card{background:var(--surface);border:1px solid var(--line-soft);border-radius:18px;padding:32px;width:min(400px,100%);box-shadow:var(--shadow)}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:1.5rem;line-height:1}
+.logo small{display:block;font-family:var(--font-body);font-weight:500;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:3px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.field label{font-size:.85rem;font-weight:600;color:var(--ink-2)}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--bg);border-radius:var(--r-sm);padding:10px 12px;width:100%}
+.field input:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px rgba(11,37,69,.15)}
+.err{color:var(--danger);font-size:.85rem;min-height:1.2em}
+/* app */
+.app{display:none;min-height:100%}
+.app.on{display:block}
+.topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line-soft);box-shadow:var(--shadow-sm)}
+.topbar .in{max-width:1400px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.topbar .who{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.who .avatar{width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700}
+.wrap{max-width:1400px;margin:auto;padding:20px}
+.banner{background:var(--accent-soft);border:1px solid var(--accent);border-radius:var(--r);padding:12px 16px;display:none;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.banner.on{display:flex}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
+.kpi{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:16px}
+.kpi span{font-size:.8rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.kpi b{display:block;font-family:var(--font-display);font-size:2rem;font-weight:800;margin-top:4px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.toolbar input[type=search],.toolbar select{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 14px}
+.toolbar .sp{flex:1}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;cursor:pointer;user-select:none}
+.switch input{appearance:none;width:40px;height:22px;border-radius:999px;background:var(--line);position:relative;margin:0;cursor:pointer;transition:background .15s}
+.switch input::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}
+.switch input:checked{background:var(--ok)}.switch input:checked::after{left:21px}
+.list{display:flex;flex-direction:column;gap:14px}
+.m{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);display:grid;grid-template-columns:170px 1fr;gap:18px;padding:16px;transition:opacity .15s}
+.m.hid{opacity:.6;border-style:dashed}
+@media(max-width:760px){.m{grid-template-columns:1fr}}
+.m-photo{background:linear-gradient(180deg,var(--surface-2),var(--surface));border-radius:var(--r-sm);aspect-ratio:1;display:grid;place-items:center;padding:10px;position:relative;overflow:hidden}
+.m-photo img{max-width:100%;max-height:100%;object-fit:contain}
+.m-photo label{position:absolute;bottom:8px;left:8px;right:8px;text-align:center;font-size:.75rem;background:rgba(0,0,0,.55);color:#fff;border-radius:6px;padding:4px;cursor:pointer}
+.m-photo input{display:none}
+.m-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.m-head h3{font-size:1.5rem;font-weight:800}
+.m-head .grow{flex:1}
+.m-head input.name{font-family:var(--font-display);font-size:1.4rem;font-weight:800;border:1px solid transparent;background:transparent;border-radius:6px;padding:2px 6px;width:180px}
+.m-head input.name:hover,.m-head input.name:focus{border-color:var(--line);background:var(--bg)}
+.pricing{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:10px;margin:12px 0;align-items:end}
+@media(max-width:760px){.pricing{grid-template-columns:1fr 1fr}}
+.pf label{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-3);font-weight:600;margin-bottom:4px}
+.pf .in{display:flex;align-items:center;border:1px solid var(--line);background:var(--bg);border-radius:var(--r-sm);padding:0 10px}
+.pf .in span{color:var(--ink-3)}
+.pf input{border:0;background:transparent;padding:9px 6px;width:100%;font-variant-numeric:tabular-nums;font-weight:600;font-size:1.05rem}
+.pf input:focus{outline:none}
+.gain{background:var(--brand);color:#fff;border-radius:var(--r-sm);padding:8px 12px}
+.gain b{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--accent)}
+.gain small{color:#b9c6d9;font-size:.78rem}
+.gain.neg b{color:#ff8a8f}
+.ref{font-size:.78rem;color:var(--ink-3)}
+.colors{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.color{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:6px 8px;background:var(--bg)}
+.color.off{opacity:.55;border-style:dashed}
+.color img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:var(--surface)}
+.color .sw{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.25);flex:none}
+.color input.cn{border:0;background:transparent;width:110px;font-weight:600}
+.color .x{border:0;background:transparent;color:var(--ink-3);font-size:1.1rem;padding:0 4px}
+.color label.ph{font-size:.72rem;color:var(--brand);cursor:pointer;text-decoration:underline}
+.color input[type=file]{display:none}
+details.spec{margin-top:10px}
+details.spec summary{cursor:pointer;font-size:.85rem;color:var(--ink-2);font-weight:600}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+@media(max-width:760px){.spec-grid{grid-template-columns:1fr}}
+.spec-grid .field{margin:0}.spec-grid input,.spec-grid textarea{padding:7px 9px;font-size:.9rem}
+.versions{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.ver{display:grid;grid-template-columns:1fr repeat(3,120px);gap:8px;align-items:center;font-size:.9rem}
+@media(max-width:760px){.ver{grid-template-columns:1fr 1fr}}
+.ver input{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:6px 8px;width:100%}
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,10,20,.6)}
+.modal.on{display:flex}
+.box{background:var(--surface);border-radius:16px;width:min(680px,100%);max-height:calc(100dvh - 32px);overflow:auto;padding:24px;box-shadow:var(--shadow)}
+.box h2{font-size:1.7rem;margin-bottom:12px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.row2{grid-template-columns:1fr}}
+.actions{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:14px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;z-index:90;font-size:.9rem;display:none;box-shadow:var(--shadow)}
+.toast.on{display:block}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px;font-size:.78rem;max-height:200px;overflow:auto;white-space:pre-wrap}
+.note{font-size:.85rem;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<div class="login" id="login">
+  <form class="login-card" id="loginForm">
+    <div class="logo"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="M19 2 6 19h9l-2 13 15-19h-9z" fill="var(--accent)"/></svg><span>CHISPA MOTOS<small>Panel de administración</small></span></div>
+    <p class="note" style="margin:14px 0 18px">Acceso exclusivo para socios. Aquí se administran precios, existencias y modelos del sitio.</p>
+    <div class="field"><label for="u">Usuario</label><input id="u" autocomplete="username" required autofocus></div>
+    <div class="field"><label for="pw">Contraseña</label><input id="pw" type="password" autocomplete="current-password" required></div>
+    <div class="err" id="loginErr"></div>
+    <button class="btn btn-accent" style="width:100%;justify-content:center" type="submit">Entrar</button>
+  </form>
+</div>
+
+<div class="app" id="app">
+  <div class="topbar"><div class="in">
+    <div class="logo"><svg width="28" height="28" viewBox="0 0 34 34" aria-hidden="true"><path d="M19 2 6 19h9l-2 13 15-19h-9z" fill="var(--accent)"/></svg><span>CHISPA MOTOS<small>Administración</small></span></div>
+    <a class="btn btn-ghost btn-sm" href="index.html" target="_blank" rel="noopener">Ver sitio</a>
+    <button class="btn btn-ghost btn-sm" type="button" id="btnSettings">Conexión GitHub</button>
+    <button class="btn btn-ghost btn-sm" type="button" id="btnUsers" hidden>Usuarios</button>
+    <button class="btn btn-ghost btn-sm" type="button" id="btnBank" hidden>Datos bancarios</button>
+    <div class="who"><span class="avatar" id="avatar">A</span><span id="whoName"></span><span class="pill" id="whoRole"></span><button class="btn btn-ghost btn-sm" type="button" id="btnLogout">Salir</button></div>
+  </div></div>
+
+  <div class="wrap">
+    <div class="banner" id="banner"><b>Tienes cambios sin publicar.</b><span class="note">Se guardan automáticamente en este navegador. Publica para que aparezcan en el sitio.</span><span class="sp" style="flex:1"></span><button class="btn btn-ghost btn-sm" type="button" id="btnDiscard">Descartar</button><button class="btn btn-accent btn-sm" type="button" id="btnPublish">Publicar cambios</button></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Buscar modelo…" aria-label="Buscar modelo">
+      <select id="fcat" aria-label="Categoría"><option value="">Todas las categorías</option><option value="moto">Motos eléctricas</option><option value="scooter">Motonetas</option><option value="bici">Bicimotos</option><option value="tri">Trimotos</option><option value="patin">Patines y montables</option></select>
+      <label class="switch"><input type="checkbox" id="showHidden"> Mostrar ocultos</label>
+      <span class="sp"></span>
+      <label class="switch" style="gap:6px">Comisión <input id="comm" type="number" min="0" max="200" step="0.5" style="width:70px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 10px;appearance:auto" aria-label="Comisión en porcentaje">%</label>
+      <button class="btn btn-ghost" type="button" id="btnApplyComm">Aplicar comisión a todos</button>
+      <button class="btn btn-ghost" type="button" id="btnExport">Descargar catálogo</button>
+      <button class="btn btn-brand" type="button" id="btnAdd">+ Agregar modelo</button>
+    </div>
+    <div class="list" id="list"></div>
+    <p class="note" style="margin-top:20px">Precio distribuidor y precio de venta con IVA incluido. Ganancia bruta = precio de venta − precio distribuidor, antes de flete, comisiones de pago e impuestos. El precio distribuidor se guarda cifrado: solo lo ven los usuarios del panel, nunca aparece en el sitio público. "Aplicar comisión" calcula el precio de venta como distribuidor + comisión, con terminación 99.</p>
+  </div>
+</div>
+
+<div class="modal" id="mAdd"><div class="box">
+  <h2>Agregar modelo</h2>
+  <form id="addForm">
+    <div class="row2"><div class="field"><label>Nombre (sin "Yadea")</label><input id="aName" required placeholder="Ej. GT30"></div><div class="field"><label>Categoría</label><select id="aCat"><option value="moto">Moto eléctrica</option><option value="scooter">Motoneta eléctrica</option><option value="bici">Bicimoto eléctrica</option><option value="tri">Trimoto</option><option value="patin">Patín / montable</option></select></div></div>
+    <div class="row2"><div class="field"><label>Precio distribuidor ($)</label><input id="aCost" type="number" min="0" step="1"></div><div class="field"><label>Precio de venta ($)</label><input id="aPrice" type="number" min="0" step="1"></div></div>
+    <div class="field"><label>Descripción corta</label><input id="aTag" placeholder="Una frase para la tarjeta"></div>
+    <div class="row2"><div class="field"><label>Motor (W)</label><input id="aPower" type="number" value="1000"></div><div class="field"><label>Velocidad máx. (km/h)</label><input id="aVmax" type="number" value="45"></div></div>
+    <div class="row2"><div class="field"><label>Autonomía (km)</label><input id="aRange" type="number" value="60"></div><div class="field"><label>Batería</label><input id="aBat" placeholder="Grafeno 60 V 23 Ah"></div></div>
+    <div class="row2"><div class="field"><label>Foto principal</label><input id="aPhoto" type="file" accept="image/*"></div><div class="field"><label>Primer color</label><input id="aColor" placeholder="Negro"></div></div>
+    <div class="actions"><button class="btn btn-ghost" type="button" data-close>Cancelar</button><button class="btn btn-accent" type="submit">Agregar</button></div>
+  </form>
+</div></div>
+
+<div class="modal" id="mSettings"><div class="box">
+  <h2>Conexión con GitHub</h2>
+  <p class="note">Con un token de GitHub, el botón "Publicar" sube el catálogo y las fotos directamente al repositorio <b>akhlay/chispamotors</b> y el sitio se actualiza en 1 o 2 minutos. Sin token, "Publicar" descarga el archivo <code>catalog.js</code> para subirlo manualmente.</p>
+  <div class="field" style="margin-top:12px"><label for="ghToken">Token (fine-grained, permiso Contents: Read and write)</label><input id="ghToken" type="password" placeholder="github_pat_…"></div>
+  <div class="row2"><div class="field"><label for="ghRepo">Repositorio</label><input id="ghRepo" value="akhlay/chispamotors"></div><div class="field"><label for="ghBranch">Rama</label><input id="ghBranch" value="main"></div></div>
+  <div class="actions"><button class="btn btn-ghost" type="button" data-close>Cerrar</button><button class="btn btn-accent" type="button" id="saveSettings">Guardar</button></div>
+</div></div>
+
+<div class="modal" id="mUsers"><div class="box">
+  <h2>Usuarios del panel</h2>
+  <p class="note">Solo el administrador principal ve esta sección. Un usuario desactivado no puede entrar. Los cambios se publican junto con el catálogo.</p>
+  <div id="usersList" style="display:flex;flex-direction:column;gap:8px;margin:14px 0"></div>
+  <h3 style="font-size:1.2rem;margin:10px 0 8px">Agregar usuario</h3>
+  <form id="userForm">
+    <div class="row2"><div class="field"><label>Usuario (sin espacios)</label><input id="nuUser" required pattern="[a-z0-9_.-]{3,20}" placeholder="ej. laura"></div><div class="field"><label>Nombre</label><input id="nuName" required></div></div>
+    <div class="row2"><div class="field"><label>Rol</label><select id="nuRole"><option value="socio">Socio (precios, existencias, modelos)</option><option value="principal">Principal (todo, incluye usuarios y bancario)</option></select></div><div class="field"><label>Contraseña (mín. 8)</label><input id="nuPass" type="password" minlength="8" required autocomplete="new-password"></div></div>
+    <div class="actions"><button class="btn btn-ghost" type="button" data-close>Cerrar</button><button class="btn btn-accent" type="submit">Agregar usuario</button></div>
+  </form>
+</div></div>
+
+<div class="modal" id="mBank"><div class="box">
+  <h2>Datos bancarios para depósitos</h2>
+  <p class="note">Cuenta donde los clientes depositan el apartado y liquidan por transferencia. Solo el administrador principal puede editarla. La CLABE se muestra al cliente en las instrucciones de pago; no captures NIP, tarjetas ni contraseñas bancarias aquí.</p>
+  <form id="bankForm" style="margin-top:12px">
+    <div class="row2"><div class="field"><label for="bkBanco">Banco</label><input id="bkBanco"></div><div class="field"><label for="bkTitular">Titular de la cuenta</label><input id="bkTitular"></div></div>
+    <div class="row2"><div class="field"><label for="bkClabe">CLABE (18 dígitos)</label><input id="bkClabe" inputmode="numeric" pattern="[0-9]{18}" maxlength="18"></div><div class="field"><label for="bkRef">Referencia que debe poner el cliente</label><input id="bkRef"></div></div>
+    <div class="field"><label for="bkNota">Nota para el cliente</label><input id="bkNota"></div>
+    <div class="actions"><button class="btn btn-ghost" type="button" data-close>Cerrar</button><button class="btn btn-accent" type="submit">Guardar</button></div>
+  </form>
+</div></div>
+
+<div class="modal" id="mConfirm"><div class="box" style="width:min(460px,100%)">
+  <h2 id="cTitle">Confirmar</h2><p id="cText" class="note"></p>
+  <div class="actions"><button class="btn btn-ghost" type="button" data-close>Cancelar</button><button class="btn btn-danger" type="button" id="cOk">Confirmar</button></div>
+</div></div>
+
+<div class="modal" id="mPublish"><div class="box">
+  <h2>Publicar cambios</h2>
+  <div id="pubBody"></div>
+  <div class="actions"><button class="btn btn-ghost" type="button" data-close>Cerrar</button></div>
+</div></div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="catalog.js?v=202609270457"></script>
+<script src="config.js?v=202609270457"></script>
+<script src="private.js?v=202609270457"></script>
+<script src="js/admin.min.js?v=202609270457"></script>
+</body>
+</html>
