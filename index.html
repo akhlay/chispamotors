@@ -383,6 +383,14 @@ footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding
 .toast.show{display:block}
 </style>
 <style>
+/* confianza */
+.trustgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:800px){.trustgrid{grid-template-columns:1fr}}
+.trustgrid .who{color:var(--ink-2);margin-bottom:12px}
+.empresa{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0 0 12px;font-size:.93rem}
+.empresa dt{color:var(--ink-3)}.empresa dd{margin:0;font-weight:600}
+.layers{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:12px;color:var(--ink-2)}
+.layers b{color:var(--ink)}
 /* protección de imágenes */
 img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 .card-media,.pd-media,.hero-img,.tile{position:relative}
@@ -420,7 +428,7 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
 
 <div class="topbar"><div class="wrap">
   <span><strong>Envío a todo México</strong> · Motos eléctricas nuevas con factura a tu nombre</span>
-  <span>No pagas nada hasta confirmar tu pedido · WhatsApp <strong>722 169 3848</strong></span>
+  <span>Paga con <strong>Mercado Pago</strong> al confirmar tu pedido · WhatsApp <strong>722 169 3848</strong></span>
 </div></div>
 
 <header class="site"><div class="wrap">
@@ -436,6 +444,7 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
     <a href="#catalogo">Catálogo</a>
     <a href="#como">Cómo comprar</a>
     <a href="#videos">Videos</a>
+    <a href="#confianza">Garantía</a>
     <a href="#faq">Preguntas</a>
     <a href="#contacto">Contacto</a>
   </nav>
@@ -468,8 +477,8 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
   <div class="wrap">
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Nuevas y originales</b><span>En caja de fábrica, con factura a tu nombre.</span></div></div>
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><div><b>Envío asegurado</b><span>A cualquier estado, con guía de rastreo.</span></div></div>
-    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><div><b>Pagas al confirmar</b><span>Primero verificamos tu unidad, luego pagas.</span></div></div>
-    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg><div><b>Atención directa</b><span>Te responde una persona por WhatsApp.</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><div><b>Pago seguro con Mercado Pago</b><span>Solo después de confirmar tu unidad.</span></div></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6z"/></svg><div><b>Garantía con nosotros</b><span>90 días directos más la póliza de fábrica.</span></div></div>
   </div>
 </section>
 
@@ -514,7 +523,7 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
     <div class="steps">
       <div class="step"><h3>Elige tu moto</h3><p>Por tipo, por uso o con el asistente de tres preguntas.</p></div>
       <div class="step"><h3>Envía tu pedido</h3><p>Con un botón mandas modelo, color y estado a nuestro WhatsApp.</p></div>
-      <div class="step"><h3>Confirmamos y pagas</h3><p>Te confirmamos unidad, envío y total. Pagas por transferencia o depósito.</p></div>
+      <div class="step"><h3>Confirmamos y pagas</h3><p>Te confirmamos unidad, envío y total, y te mandamos tu liga de pago de Mercado Pago.</p></div>
       <div class="step"><h3>Recíbela en casa</h3><p>Sale en 1 a 2 días hábiles con guía de rastreo y factura a tu nombre.</p></div>
     </div>
   </div>
@@ -527,14 +536,42 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
   </div>
 </section>
 
+<section class="section" id="confianza" aria-labelledby="h-conf" style="background:var(--surface-2);">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow">Quiénes somos</span><h2 id="h-conf">Una empresa mexicana que responde por tu moto</h2><p>Somos una tienda independiente. Por eso la garantía de tu compra la respaldamos nosotros directamente, además de la póliza de fábrica.</p></div>
+    <div class="trustgrid">
+      <div class="panel">
+        <h3>Chispa Motos</h3>
+        <p class="who">Chispa Motos es una marca de <b data-emp="razon">Chino Maomi S.A.S.</b>, empresa mexicana con sede en el Estado de México. Somos tres socios: uno atiende ventas y tecnología, otro la logística de envíos y otro el abastecimiento de unidades nuevas.</p>
+        <dl class="empresa">
+          <dt>Razón social</dt><dd data-emp="razon">Chino Maomi S.A.S.</dd>
+          <dt data-emp-row="rfc">RFC</dt><dd data-emp="rfc"></dd>
+          <dt data-emp-row="domicilio">Domicilio fiscal</dt><dd data-emp="domicilio"></dd>
+          <dt>WhatsApp de ventas</dt><dd>722 169 3848</dd>
+          <dt>Pagos</dt><dd>Mercado Pago, a nombre de <span data-emp="razon">Chino Maomi S.A.S.</span></dd>
+        </dl>
+        <p class="pd-note">Nunca te pediremos pagos a otro nombre ni desde otro número.</p>
+      </div>
+      <div class="panel">
+        <h3>Tu garantía, en tres niveles</h3>
+        <ol class="layers">
+          <li><b>90 días directos con nosotros.</b> Si tu moto presenta un defecto de fábrica en los primeros 90 días, la reparamos, te la cambiamos o te devolvemos tu dinero. La respalda <span data-emp="razon">Chino Maomi S.A.S.</span> como vendedor.</li>
+          <li><b>Póliza del fabricante.</b> Tu unidad incluye su póliza de fábrica para motor, batería y chasis. Si la necesitas, nosotros hacemos el trámite por ti.</li>
+          <li><b>Revisión antes y al entregar.</b> Te mandamos video de tu moto antes de enviarla y la revisas al recibirla. Si llega dañada por el transporte, la reponemos.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="faq" aria-labelledby="h-faq">
   <div class="wrap">
     <div class="section-head"><span class="eyebrow">Preguntas frecuentes</span><h2 id="h-faq">Lo que todos preguntan</h2></div>
     <div class="faq">
-      <details><summary>¿Cómo pago y es seguro?</summary><p>Primero te confirmamos por WhatsApp que tu modelo y color están disponibles, el costo de envío y el total. Después pagas por transferencia o depósito y te entregamos comprobante y factura. Nunca te pediremos pagos desde otro número que no sea el 722 169 3848.</p></details>
+      <details><summary>¿Cómo pago y es seguro?</summary><p>Primero te confirmamos por WhatsApp que tu modelo y color están disponibles, el costo de envío y el total. Después te mandamos una liga de pago de Mercado Pago a nombre de Chino Maomi S.A.S.: pagas con tarjeta de crédito o débito, saldo de Mercado Pago o efectivo en tiendas, sin compartirnos los datos de tu tarjeta. Si prefieres, también aceptamos transferencia a la cuenta de la empresa. Nunca te pediremos pagos desde otro número que no sea el 722 169 3848.</p></details>
       <details><summary>¿Cuánto tarda y cuánto cuesta el envío?</summary><p>Tu moto sale en 1 a 2 días hábiles después del pago. Llega en 2 a 4 días hábiles al centro del país y en 3 a 9 días al resto. En la ficha de cada modelo eliges tu estado y ves el costo estimado; el total final te lo confirmamos antes de pagar.</p></details>
       <details><summary>¿Las motos son nuevas y originales?</summary><p>Sí. Todas son unidades nuevas, originales, en su empaque de fábrica y se facturan a tu nombre para que puedas emplacarlas.</p></details>
-      <details><summary>¿Tienen garantía?</summary><p>Cada unidad incluye la póliza de garantía del fabricante. Si se presenta una falla, nosotros te ayudamos con el trámite de principio a fin.</p></details>
+      <details><summary>Si no son distribuidor autorizado, ¿mi garantía sirve?</summary><p>Sí. Como vendedores respondemos directamente por 90 días ante cualquier defecto de fábrica, y tu unidad incluye además la póliza del fabricante, que tramitamos por ti. Te lo entregamos por escrito con tu factura.</p></details>
       <details><summary>¿Necesito placas y licencia?</summary><p>Los modelos de hasta 25 km/h, como la Teena y los patines, circulan sin placas. Desde 2026 en CDMX los eléctricos de más de 25 km/h requieren placas, licencia A1 o A2 y seguro; en otros estados las reglas varían. Tu factura te sirve para el trámite.</p></details>
       <details><summary>¿Cómo la cargo y cuánto gasto de luz?</summary><p>Con el cargador incluido, en cualquier contacto de casa. Una carga completa toma de 6 a 8 horas y cuesta entre $3 y $8 pesos de luz según el modelo.</p></details>
     </div>
@@ -575,7 +612,8 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
     <div class="cols">
       <div>
         <a class="logo" href="#top" style="color:#fff"><svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><path d="M19 2 6 19h9l-2 13 15-19h-9z" fill="var(--accent)"/></svg><span>CHISPA MOTOS<small style="color:#8797ad">Motos eléctricas en línea</small></span></a>
-        <p style="margin-top:14px;font-size:.92rem;max-width:340px">Tienda en línea de motos eléctricas. Enviamos desde el Estado de México a todo el país.</p>
+        <p style="margin-top:14px;font-size:.92rem;max-width:340px">Tienda en línea de motos eléctricas de <span data-emp="razon">Chino Maomi S.A.S.</span> Enviamos desde el Estado de México a todo el país.</p>
+        <p style="margin-top:6px;font-size:.85rem" data-emp-foot></p>
         <p style="margin-top:10px;font-size:.92rem">WhatsApp: <b style="color:#fff">722 169 3848</b></p>
       </div>
       <div><h4>Comprar</h4><a href="#encuentra">Encuentra tu moto</a><a href="#catalogo">Catálogo</a><a href="#como">Cómo comprar</a></div>
@@ -583,7 +621,7 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
       <div><h4>Legal</h4><a href="#" data-legal="privacidad">Aviso de privacidad</a><a href="#" data-legal="terminos">Términos y condiciones</a><a href="#" data-legal="devoluciones">Cancelaciones y devoluciones</a></div>
     </div>
     <div class="legal">
-      <span>© 2026 Chispa Motos. Comercio independiente: no somos distribuidor autorizado ni estamos afiliados, patrocinados o respaldados por el fabricante. Las marcas y nombres de modelos pertenecen a sus titulares y se usan solo para identificar los productos a la venta.</span>
+      <span>© 2026 Chispa Motos, marca de <span data-emp="razon">Chino Maomi S.A.S.</span> Tienda independiente: no somos distribuidor autorizado ni estamos afiliados al fabricante, por eso respaldamos directamente la garantía de lo que vendemos. Las marcas y nombres de modelos pertenecen a sus titulares y se usan solo para identificar los productos a la venta.</span>
       <span>Precios en pesos mexicanos con IVA incluido, sujetos a disponibilidad y a cambio sin previo aviso. Autonomías y velocidades son datos del fabricante. Imágenes ilustrativas. Videos de terceros insertados desde sus plataformas.</span>
     </div>
   </div>
@@ -631,5 +669,5 @@ img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-tou
 <div class="toast" id="toast" role="status"></div>
 
 <script type="application/ld+json" id="ldjson"></script>
-<script src="catalog.js?v=202609270457"></script>
-<script src="js/app.min.js?v=202609270457"></script>
+<script src="catalog.js?v=202609280023"></script>
+<script src="js/app.min.js?v=202609280023"></script>
